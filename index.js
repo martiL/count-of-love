@@ -101,8 +101,6 @@ function createCounterSection(sectionId, time) {
     for(let i = 0; i < time; i++) {
         const heart = document.createElement('img')
         heart.src = 'heart.svg'
-        heart.style.width = imageSize
-        heart.style.height = imageSize
         heartContainer.append(heart)
     }
     contentContainer.append(heartContainer)
