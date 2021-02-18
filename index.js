@@ -2,8 +2,8 @@
 // Define all data related to the weeding here
 function getData() {
   return {
-    partnerA: 'Martin',
-    partnerB: 'Dorle',
+    partnerA: 'Dorle',
+    partnerB: 'Martin',
     weedingDay: new Date(2021, 2, 10),
     quote: 'I LOOK AT YOU, AND I’M HOME.',
     source: 'https://ohmy.disney.com/movies/2015/04/23/9-dory-quotes-deeper-than-the-drop-off/',
