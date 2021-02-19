@@ -1,13 +1,12 @@
 
-// Define all data related to the weeding here
+// Define all data related to the wedding here
 function getData() {
   return {
     partnerA: 'Dorle',
     partnerB: 'Martin',
-    weedingDay: new Date(2021, 2, 10),
+    weddingDay: new Date(2021, 2, 10),
     quote: 'I LOOK AT YOU, AND I’M HOME.',
-    source: 'https://ohmy.disney.com/movies/2015/04/23/9-dory-quotes-deeper-than-the-drop-off/',
-    local: "de-DE"
+    source: 'https://ohmy.disney.com/movies/2015/04/23/9-dory-quotes-deeper-than-the-drop-off/'
   }
 }
 
@@ -20,8 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
     names.innerHTML = `<h2>${data.partnerA} &#9829; ${data.partnerB}`
     infoSection.append(names)
 
-    const timeDiff = getTimeDiff(Date.now(), data.weedingDay.getTime())
-    if (timeDiff.days === 0) {
+    const now = new Date()
+    if (now.getDate() === data.weddingDay.getDate() &&
+        now.getMonth() === data.weddingDay.getMonth() &&
+        now.getFullYear() >= data.weddingDay.getFullYear()
+    ) {
       const firstLine = document.createElement('p')
       firstLine.innerHTML = "Today is the day to celebrate our love."
       
@@ -32,21 +34,21 @@ document.addEventListener('DOMContentLoaded', function() {
       infoSection.append(firstLine)
       infoSection.append(yourQuote)
         
-      infoSection.className = "info-section info-section-weedingday"
+      infoSection.className = "info-section info-section-weddingday"
 
       const counterBox = document.querySelector('#counter-box')
-      counterBox.className = "counter-container counter-container-weedingday"
+      counterBox.className = "counter-container counter-container-weddingday"
 
     }
-    createTimerStack(data.weedingDay)
+    createTimerStack(data.weddingDay)
     setInterval(function() {
-        createTimerStack(data.weedingDay)
+        createTimerStack(data.weddingDay)
     }, 1000)
 
 })
 
-function createTimerStack(weedingDay) {
-    const timeDiff = getTimeDiff(Date.now(), weedingDay.getTime())
+function createTimerStack(weddingDay) {
+    const timeDiff = getTimeDiff(Date.now(), weddingDay.getTime())
     createCounterSection('years-container', timeDiff.years)
     createCounterSection('days-container', timeDiff.days)
     createCounterSection('hours-container', timeDiff.hours)

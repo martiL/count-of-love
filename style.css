@@ -1,13 +1,13 @@
 
 @keyframes heartbeat {
     0% {
-        transform: scale(1.1);
+        transform: scale(1.3);
     }
     50% {
         transform: scale(1.0);
     }
     100% {
-        transform: scale(1.1);
+        transform: scale(1.3);
     }
 }
 
@@ -17,11 +17,11 @@
         background-color: rgb(255, 202, 202);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(1.0);
         background-color: rgb(255, 158, 158);
     }
     100% {
-        transform: scale(1.2);
+        transform: scale(1.1);
         background-color: rgb(255, 202, 202);
     }
 }
@@ -31,10 +31,10 @@
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(50px);
+        transform: translateY(20px);
     }
     100% {
-        transform: translateY(80px);
+        transform: translateY(40px);
     }
 }
 
@@ -43,7 +43,20 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Rubik', 'sans-serif';
-    font-size: 1.5rem;
+    font-size: calc(10px + 0.33vw);
+}
+
+h1 {
+    font-size: 4.5em;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.8em;;
 }
 
 .heart-container {
@@ -52,6 +65,7 @@ body {
 }
 
 .heart-container img {
+    padding: 1px;
     width: 24px;
     height: 24px;
     animation: heartbeat;
@@ -76,26 +90,19 @@ body {
     overflow: overlay;
     text-align: center;
     padding: 10px 20px;
-    margin-bottom: -32px;
+    margin-bottom: 24px;
     border-radius: 14px;
     background-color: rgb(255, 202, 202);
 }
 
-.info-section-weedingday {
+.info-section-weddingday {
     animation: colorShift;
     animation-duration: 2s;
     animation-fill-mode: forwards;
 }
 
-.counter-container-weedingday {
+.counter-container-weddingday {
     animation: moveDown;
     animation-duration: 2s;
     animation-fill-mode: forwards;
-}
-
-@media only screen and (max-width: 768px) {
-    .heart-container img {
-        width: 28px;
-        height: 28px;
-    }
 }
