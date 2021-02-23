@@ -75,7 +75,7 @@ function createCounterSection(sectionId, time) {
     switch (sectionId) {
         case 'years-container':
             timeTag.innerHTML = time > 1 ? `${time} years` :  `${time} year`;
-            imageSize = "36px"
+            imageSize = "38px"
             break;
         case 'seconds-container':
             timeTag.innerHTML = time > 1 ? `${time} seconds` :  `${time} second`;
@@ -83,15 +83,15 @@ function createCounterSection(sectionId, time) {
             break;
         case 'minutes-container':
             timeTag.innerHTML =  time > 1 ? `${time} minutes` : `${time} minute`;
-            imageSize = "14px"
+            imageSize = "16px"
             break;
         case 'days-container':
             timeTag.innerHTML =  time > 1 ? `${time} days` : `${time} day`;
-            imageSize = "24px"
+            imageSize = "28px"
             break;
         case 'hours-container':
             timeTag.innerHTML =  time > 1 ? `${time} hours` : `${time} hour`; 
-            imageSize = "16px"
+            imageSize = "21px"
             break;
         default:
             break;
@@ -103,6 +103,8 @@ function createCounterSection(sectionId, time) {
     for(let i = 0; i < time; i++) {
         const heart = document.createElement('img')
         heart.src = 'heart.svg'
+        heart.style.width = imageSize
+        heart.style.height = imageSize
         heartContainer.append(heart)
     }
     contentContainer.append(heartContainer)
